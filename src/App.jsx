@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import HeaderNav from './components/HeaderNav.jsx';
+import HomeLanding from './components/HomeLanding.jsx';
 import MangaReader from './components/MangaReader.jsx';
 import MangaGenerator from './components/MangaGenerator.jsx';
 import CommunityHub from './components/CommunityHub.jsx';
 
 export default function App() {
-  const [section, setSection] = useState('reader');
+  const [section, setSection] = useState('home');
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      {/* Ambient gradients */}
       <div className="fixed inset-0 pointer-events-none" aria-hidden>
         <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-fuchsia-600/20 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-600/20 blur-3xl" />
@@ -16,6 +18,7 @@ export default function App() {
 
       <HeaderNav current={section} onChange={setSection} />
 
+      {section === 'home' && <HomeLanding onGoTo={setSection} />}
       {section === 'reader' && <MangaReader />}
       {section === 'generator' && <MangaGenerator />}
       {section === 'community' && <CommunityHub />}

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Users, BookOpen, Wand2 } from 'lucide-react';
+import { Home, Users, BookOpen, Wand2 } from 'lucide-react';
 
 const tabs = [
+  { key: 'home', label: 'Home', icon: Home },
   { key: 'reader', label: 'Reader', icon: BookOpen },
   { key: 'generator', label: 'Generator', icon: Wand2 },
   { key: 'community', label: 'Community', icon: Users },
